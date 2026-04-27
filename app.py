@@ -10,15 +10,12 @@ from utils.config import PAGES
 from utils.styling import load_css
 from components.sidebar import render_sidebar
 
-# Import pages - ONLY 4 PAGES
-# from pages.evaluasi_l1 import render_evaluasi_l1
-# from pages.penilaian import render_penilaian
 from pages.sistem_nlp import render_sistem_nlp
 from pages.info import render_info
 
 # Page config
 st.set_page_config(
-    page_title="Dashboard Learning Insight | PT PLN (Persero) UPDL Surabaya",
+    page_title="Learning Insight | PT PLN (Persero) UPDL Surabaya",
     layout="wide",
     initial_sidebar_state="expanded",
     page_icon="⚡"
@@ -31,7 +28,6 @@ load_css()
 if "page" not in st.session_state:
     st.session_state.page = PAGES["Sistem NLP"]
 
-# Tambahkan JavaScript untuk menghapus sidebar default setiap kali refresh
 st.markdown("""
 <script>
     // Function to remove default sidebar items
@@ -60,14 +56,8 @@ st.markdown("""
 </script>
 """, unsafe_allow_html=True)
 
-# Render sidebar (our custom sidebar)
 render_sidebar()
 
-# Render selected page - ONLY 4 PAGES
-# if st.session_state.page == PAGES["Evaluasi L1"]:
-#     render_evaluasi_l1()
-# elif st.session_state.page == PAGES["Penilaian"]:
-#     render_penilaian()
 if st.session_state.page == PAGES["Sistem NLP"]:
     render_sistem_nlp()
 elif st.session_state.page == PAGES["Info"]:
