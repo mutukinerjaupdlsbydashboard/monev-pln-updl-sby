@@ -6,7 +6,7 @@ def render_info():
     st.markdown("""
     <div class='page-header'>
         <h3 class='page-subtitle'>ℹ️ Informasi Sistem</h3>
-        <p class='page-description'>Detail informasi mengenai Dashboard Learning Insight</p>
+        <p class='page-description'>Detail informasi mengenai Learning Insight</p>
     </div>
     """, unsafe_allow_html=True)
     
