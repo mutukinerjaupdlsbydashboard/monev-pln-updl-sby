@@ -15,7 +15,7 @@ def render_sidebar():
             except:
                 st.markdown("<div style='text-align:center; font-size:2rem;'>⚡</div>", unsafe_allow_html=True)
         
-        st.markdown("<p class='sidebar-title'>⚡ DASHBOARD LEARNING INSIGHT</p>", unsafe_allow_html=True)
+        st.markdown("<p class='sidebar-title'>⚡ LEARNING INSIGHT</p>", unsafe_allow_html=True)
         st.markdown("<hr style='margin:0px 15px 35px 15px; border:0; border-top:0.5px solid #cccccc;'>", unsafe_allow_html=True)
         
         # Navigation button
