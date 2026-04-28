@@ -44,7 +44,7 @@ def process_data_nlp(df):
     progress_bar = st.progress(0)
     status_text = st.empty()
     
-    for i, text in enumerate(df["Komentar"]):
+    for i, text in enumerate(df["Kategori Komentar"]):
         if is_valid_text(text):
             sent_label, sent_conf = predict_sentiment(str(text), tokenizer_sent, model_sent)
             labels.append(sent_label)
@@ -104,7 +104,7 @@ def render_sistem_nlp():
         uploaded = st.file_uploader(
             "Upload file CSV / XLS / XLSX",
             type=["csv", "xls", "xlsx"],
-            help="File harus memiliki kolom 'Komentar' untuk dianalisis"
+            help="File harus memiliki kolom 'Kategori Komentar' untuk dianalisis"
         )
         
         if uploaded is None:
@@ -122,8 +122,8 @@ def render_sistem_nlp():
             st.dataframe(df.head(10), use_container_width=True)
             st.markdown(f"**Total Data:** {len(df)} baris")
             
-            if "Komentar" not in df.columns:
-                st.error("❌ Dataset harus memiliki kolom 'Komentar'")
+            if "Kategori Komentar" not in df.columns:
+                st.error("❌ Dataset harus memiliki kolom 'Kategori Komentar'")
             else:
                 if st.button("🔍 Analisis NLP", key="btn_analisis_dataset", use_container_width=True):
                     process_data_nlp(df)
